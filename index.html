@@ -67,7 +67,7 @@
 
   <div class="container">
     <h2>Booking Form</h2>
-    <form action="#" method="post">
+    <form id="bookingForm">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" required>
 
@@ -100,5 +100,12 @@
     <p>&copy; 2025 EasyBook | All Rights Reserved</p>
   </footer>
 
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Stop form from refreshing the page
+      alert("✅ Thank you! Your booking has been received.");
+      this.reset();
+    });
+  </script>
 </body>
 </html>
