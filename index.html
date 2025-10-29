@@ -3,57 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Booking Website</title>
+  <title>Booking Website</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f4f8;
+      background-color: #f2f2f2;
       margin: 0;
       padding: 0;
     }
     header {
       background-color: #0078d7;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 20px 0;
     }
     .container {
-      width: 90%;
-      max-width: 600px;
       background-color: white;
+      max-width: 500px;
       margin: 30px auto;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    form label {
+    label {
       display: block;
-      margin: 10px 0 5px;
+      margin-top: 10px;
       font-weight: bold;
     }
-    form input, form select, form textarea, form button {
+    input, select, textarea, button {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
+      margin-top: 5px;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
+      border-radius: 5px;
     }
-    form button {
+    button {
       background-color: #0078d7;
       color: white;
-      font-size: 16px;
       border: none;
+      margin-top: 15px;
       cursor: pointer;
     }
-    form button:hover {
+    button:hover {
       background-color: #005fa3;
     }
     footer {
-      text-align: center;
-      padding: 10px;
       background-color: #0078d7;
       color: white;
+      text-align: center;
+      padding: 10px 0;
       margin-top: 30px;
     }
   </style>
@@ -61,17 +59,15 @@
 <body>
 
   <header>
-    <h1>Welcome to EasyBook</h1>
-    <p>Book your stay in seconds!</p>
+    <h1>Hotel Booking</h1>
   </header>
 
   <div class="container">
-    <h2>Booking Form</h2>
     <form id="bookingForm">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" required>
 
-      <label for="email">Email Address</label>
+      <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
 
       <label for="checkin">Check-in Date</label>
@@ -82,30 +78,30 @@
 
       <label for="guests">Number of Guests</label>
       <select id="guests" name="guests">
-        <option value="1">1 Guest</option>
-        <option value="2">2 Guests</option>
-        <option value="3">3 Guests</option>
-        <option value="4">4 Guests</option>
-        <option value="5">5+ Guests</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4+</option>
       </select>
 
       <label for="requests">Special Requests</label>
-      <textarea id="requests" name="requests" rows="4" placeholder="Any special requirements..."></textarea>
+      <textarea id="requests" name="requests" rows="3"></textarea>
 
       <button type="submit">Book Now</button>
     </form>
   </div>
 
   <footer>
-    <p>&copy; 2025 EasyBook | All Rights Reserved</p>
+    <p>&copy; 2025 Booking Site</p>
   </footer>
 
   <script>
-    document.getElementById("bookingForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Stop form from refreshing the page
-      alert("✅ Thank you! Your booking has been received.");
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // prevent sending data to server
+      alert("✅ Booking submitted successfully!");
       this.reset();
     });
   </script>
+
 </body>
 </html>
